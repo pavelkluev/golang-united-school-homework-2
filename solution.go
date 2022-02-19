@@ -15,21 +15,21 @@ import "math"
 type SidesCount int
 
 const (
-	circle SidesCount = iota
+	SidesCircle SidesCount = iota
 	_
 	_
-	triangle SidesCount = iota
-	square SidesCount = iota
+	SidesTriangle SidesCount = iota
+	SidesSquare SidesCount = iota
 )
 
 
 func CalcSquare(sideLen float64, sidesNum SidesCount) float64 {
 	switch sidesNum{
-	case circle: 
+	case SidesCircle: 
 		return math.Pi * math.Pow(sideLen, 2)
-	case triangle:
-		return math.Pow(sideLen, 2)* (math.Sqrt(float64(triangle)) / 4)
-	case square:
+	case SidesTriangle:
+		return math.Pow(sideLen, 2)* (math.Sqrt(float64(SidesTriangle)) / 4)
+	case SidesSquare:
 		return math.Pow(sideLen, 2)
 	}
 	return 0
